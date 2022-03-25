@@ -8,11 +8,16 @@
 
 <body>
     <script>
+        //function for computer's random choice
         function computerPlay(){
+            //An Array of the string options
             const pickArray = ['Rock','Paper','Scissors'];
+            //Getting a random choice
             const play = Math.floor(Math.random()*pickArray.length);
+            //set function result as a random choice of the array
             return computerChoice = pickArray[play];
         }
+        //so we can see the result of the function in a string
        console.log(computerPlay(''));
 
 
