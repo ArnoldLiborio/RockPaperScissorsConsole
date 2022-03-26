@@ -19,7 +19,30 @@
         }
         //so we can see the result of the function in a string
        console.log(computerPlay(''));
-
+       
+        //function for the prompted player selection
+       function playerSelection(){
+        //whatever they type in will be the var choice  
+        let choice = window.prompt('Lets play rock, paper,scissors');
+           //if the string is, after lower casing all the letters, equal to rock then choice is equal to Rock
+            if (choice.toLowerCase() == "rock"){
+                choice = 'Rock';
+            }
+            //if they mean paper then its set to Paper
+            else if (choice.toLowerCase() == "paper"){
+                choice = 'Paper';
+            } 
+            //if its any variation of scissors the it is set to equal Scissors
+            else if (choice.toLowerCase() == "scissors"){
+                choice = 'Scissors';
+            } 
+            // if the string is not rock, paper, scissors, or not even a string return 'not a vaild choice'
+            else return "Not a vaild choice, guess we'll play another time.";
+            // return the value of the function as what is in the choice var
+            return choice;
+       } 
+       //in the console show the result of the playerSelection function
+       console.log(playerSelection());
 
     </script>
 
