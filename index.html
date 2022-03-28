@@ -18,10 +18,10 @@
             return computerChoice = pickArray[play];
         }
         //so we can see the result of the function in a string
-       console.log(computerPlay(''));
+      // console.log(computerPlay());
        
         //function for the prompted player selection
-       function playerSelection(){
+        function playerSelection(){
         //whatever they type in will be the var choice  
         let choice = window.prompt('Lets play rock, paper,scissors');
            //if the string is, after lower casing all the letters, equal to rock then choice is equal to Rock
@@ -42,7 +42,54 @@
             return choice;
        } 
        //in the console show the result of the playerSelection function
-       console.log(playerSelection());
+      // console.log(playerSelection());
+
+      //function for a round of rock, paper, scissors
+       function playRound(playerSelection,computerPlay) //playerselection and computerplay are place holders that repersent the functions of the same name
+       {
+           let result;//var name to return a string of the argument outcome
+            let pChoice = playerSelection;//it takes the value of what is put in the first postion
+            const cChoice = computerPlay;// same but for the second postion
+       // first argument/ comparison of the place holders or parameters
+         if (pChoice == 'Rock' && cChoice == 'Paper')//I think the 2 equalsigns works in a 'close enough' comparison
+         {
+         result = "You Lose! Paper beats Rock"; //it's what it'll say if the boolean is true
+         }   //2nd argument
+         else if (pChoice =='Rock' && cChoice =='Scissors'){
+            result = "You Win! Rock beats Scissors";
+            //result is what will be returned at the end
+        }    //3rd argument
+        else if (pChoice=='Rock'&& cChoice == "Rock"){
+            result = "It's a Draw"; //3rd result
+        }    //4th argument
+        else if (pChoice == "Paper"&& cChoice =='Rock'){
+            result = "You Win! Paper beats Rock";//4th result
+        }    //5th argument
+        else if (pChoice == 'Paper'&& cChoice == "Paper"){
+            result = "It's a Draw";//5th result
+        }    //6th argument
+        else if (pChoice == 'Paper'&& cChoice == 'Scissors'){
+            result = "You Lose! Scissors beats Paper";
+            //6th result
+        }   //7th argument
+        else if (pChoice =='Scissors'&& cChoice=='Rock'){
+            result = "You Lose! Rock beats Scissors";//7th result
+        }     //8th argument
+        else if (pChoice == 'Scissors'&& cChoice == 'Paper'){
+            result = "You Win! Scissors beats Paper";//8th result
+        }     //9th argument
+        else if (pChoice == 'Scissors'&& cChoice == 'Scissors'){
+            result = "It's a Draw";//9th result
+        } //There is a pattern for acouple things, the draw could be assigned in var saying it's a draw then assign result to it or if i just compare two choices and have the draw as some kind of default. And I could do the same for winning and losing to set a var in a backtick string and fill in the ${} to what the choices are, maybe?
+
+         else { return 'idk';}//if all the options aren't compared or if the parameter arent vaild its an idk
+         return result;//the function will show or return the result
+        }
+ //playerSelection = "Scissors";
+const computerSelection = computerPlay();//the parameters for the function takes two, so we set the computerselection parameter to the random computerplay function
+console.log(computerSelection);//just checking the value set by the random function but i shouldnt call the function cause it'll set the function to something new
+       console.log(playRound(playerSelection(),computerSelection));//game is played on the console so Ill play a round
+
 
     </script>
 
