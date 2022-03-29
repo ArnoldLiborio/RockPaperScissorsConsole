@@ -86,10 +86,22 @@
          return result;//the function will show or return the result
         }
  //playerSelection = "Scissors";
-const computerSelection = computerPlay();//the parameters for the function takes two, so we set the computerselection parameter to the random computerplay function
-console.log(computerSelection);//just checking the value set by the random function but i shouldnt call the function cause it'll set the function to something new
-       console.log(playRound(playerSelection(),computerSelection));//game is played on the console so Ill play a round
-
+//the parameters for the function takes two, so we set the computerselection parameter to the random computerplay function
+const computerSelection = computerPlay();
+// console.log(computerSelection);//just checking the value set by the random function but i shouldnt call the function cause it'll set the function to something new
+ //      console.log(playRound(playerSelection(),computerSelection));//game is played on the console so Ill play a round using the playerselection function, which is prompt, and the var computerselection which calls a random value of rock, paper, scissor using the computerplay function
+     //this function will play the round 5 times
+ function game(){
+    // a loop to play if i is less than 5 and if it is i gets a plus one to its value
+    for (let i = 0; i < 5 ; i++){
+      const computerSelection = computerPlay(); 
+      //the var will call the function to pick a random play 5 times
+        console.log(computerSelection);
+        // it'll tell me what the random pick will be 5 times 
+        console.log(playRound(playerSelection(),computerSelection)); //it should play the playRound function which decides the winner of a round      
+  }
+}
+console.log(game());
 
     </script>
 
